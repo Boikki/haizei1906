@@ -4,18 +4,18 @@
 目标明年春招
 ## 大战冬三月 拼搏一百天！
 
-#### 2021.11.8目录：
+#### 2021.11.8目录:
 
-. <br>
-├── C <br>
-├── Euler project <br>
-└── oj <br>
+    . <br>
+    ├── C <br>
+    ├── Euler project <br>
+    └── oj <br>
 
 #### 2021.11.11目录:
     更新了欧拉计划的三个题
     . <br>
     ├── 1.c <br>
-    ├── 2.Euler`_`project <br>
+    ├── 2.Euler_project <br>
     └── oj <br>
 3 directories
 
