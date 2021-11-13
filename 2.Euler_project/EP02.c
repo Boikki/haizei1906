@@ -27,32 +27,3 @@ int main() {
     return 0;
 }
 
-int main() {
-    fib[1] = 1, fib[2] = 2;
-    int sum = 0, n = 2;
-    for (n = 2; fib[n] <= MAX_M; n++) {
-        fib[n + 1] = fib[n] + fib[n - 1];
-    }
-    for (int i = 1; i <= n; i++) {
-        if (fib[i] % 2) continue;
-        sum += fib[i];
-    }
-    printf("%d\n", sum);
-    return 0;
-}
-
-int main() {
-    fib[1] = 1, fib[2] = 2;
-    int n = 2;
-    while (fib[n] + fib[n - 1] < MAX_M) {
-        fib[n + 1] = fib[n - 1] + fib[n];
-        n++;
-    }
-    int sum = 0;
-    for (int i = 1; i <= n; i++) {
-        if (fib[i] % 2) continue;
-        sum += fib[i];
-    }
-    printf("%d\n", sum);
-    return 0;
-}
