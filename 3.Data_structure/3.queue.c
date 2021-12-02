@@ -49,7 +49,7 @@ int pop(Queue *q) {
     return 1;
 }
 
-void clrear(Queue *q) {
+void clear(Queue *q) {
     if (q == NULL) return ;
     free(q->data);
     free(q);
