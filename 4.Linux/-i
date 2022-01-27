@@ -1,0 +1,64 @@
+
+## 系统信息获取
+
+#### `uptime` - print系统运行时长和平均负载
+
+-p, --pretty
+              show uptime in pretty format
+
+-h, --help
+       display this help text
+
+-s, --since
+       system up since, in yyyy-mm-dd HH:MM:SS format
+
+-V, --version
+       display version information and exit
+
+#### `who` - print当前登录系统的用户信息
+用法：`w [options] user [...] ` 第一行是uptime的print, 
+`w | head -1 == uptime`
+
+user是打印当前用户名的信息。
+
+COMMAND-LINE OPTIONS
+
+       -h, --no-header
+              Don't print the header.
+       -u, --no-current
+              Ignores the username while figuring out the current process  and
+              cpu times.  To demonstrate this, do a "su" and do a "w" and a "w
+              -u".
+       -s, --short
+              Use the short format.  Dont print the login time, JCPU or  PCPU
+              times.
+			  JCPU = jobs CPU即当前终端运行的所有前台后台程序占CPU资源，but不包含过去这台终端启动的后台程序
+			  PCPU = Process CPU
+       -f, --from
+			  实际上就是将远程连接的用户名打印出来，默认是不打印的
+		      ，即便系统管理员将这个命令改成打印远程连接的了，它也是不打印的
+              Toggle  printing  the from (remote hostname) field.  The default
+              as released is for the from field to not  be  printed,  although
+              your  system  administrator  or distribution maintainer may have
+              compiled a version in which the from field is shown by default.
+	   -i, --ip-addr
+			  把f的用户名换成ip
+              Display IP address instead of hostname for from field.
+
+       -V, --version
+              Display version information.
+
+       -o, --old-style
+              Old style output.  Prints blank space for idle times  less  than
+              one minute.
+
+
+
+
+#### `last` - print最近用户登录信息
+#### `w` - print当前用户列表以及正在执行的任务
+
+#### `whoami`
+#### `date`
+#### `cal`
+#### `uname`
