@@ -15,8 +15,10 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <string.h>
-#include <sys/ioctl.h>
-#include <sys/time.h>
+#include <sys/stat.h>
+#include <dirent.h>
 
 int socket_create(int port);
+int socket_connect(char *host, int port);
+int socket_accept(int sockfd);
 #endif

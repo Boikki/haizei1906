@@ -30,38 +30,23 @@ int socket_create(int port) {
     return sockfd;
 }
 
-int socket_create_nonblock(char *ip, int port, long timeout) {
-    int sockfd, ret;
+int socket_connect(char *host, int port) {
+    int sockfd;
     struct sockaddr_in server;
-    struct timeval tm;
     if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         return -1;
     }
-    memset(&server, 0, sizeof(server));
     server.sin_family = AF_INET;
     server.sin_port = htons(port);
-    server.sin_addr.s_addr = inet_addr(ip);
-    printf("connect to %s : %d\n", ip, port);
-
-    unsigned long ul = 1;
-    ioctl(sockfd, FIONBIO, &ul);
-    fd_set set;
-    FD_ZERO(&set);
-    FD_SET(sockfd, &set);
-    tm.tv_sec = 0;
-    tm.tv_usec = timeout;
-    int error;
-    int len = sizeof(error);
+    server.sin_addr.s_addr = inet_addr(host);
     if (connect(sockfd, (struct sockaddr *)&server, sizeof(server)) < 0) {
-        if (select(sockfd + 1, NULL, &set, NULL, &tm) > 0) {
-            if (getsockopt(sockfd, SOL_SOCKET, SO_ERROR, &error, (socklen_t *)&len) < 0) {
-                perror("getsockopt");
-                ret = -1;
-            }
-            if (error == 0) ret = 1;
-            else ret = -1;
-        }
+        //没必要perror
+        return -1;
     }
-    close(sockfd);
-    return ret;
+    return sockfd;
+}
+
+int socket_accept(int sockfd) {
+    //todo
+    return 1;
 }
