@@ -17,6 +17,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <dirent.h>
+#include <sys/epoll.h>
 
 int socket_create(int port);
 int socket_connect(char *host, int port);
