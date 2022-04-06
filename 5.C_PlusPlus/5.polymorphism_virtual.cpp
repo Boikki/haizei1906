@@ -27,6 +27,9 @@ struct Cat : Animal {
     void run() {
         cout << "Cat can run" << endl;
     }
+    void test() {
+        cout << "Cat test" << endl;
+    }
 };
 
 struct Dog : Animal {
@@ -58,6 +61,8 @@ int main() {
     }
     arr[8]->run();
     cout << sizeof(Bat) << endl;
+
+    cout << "______________" << endl;
     Cat a;
     ((func_t **)(&a))[0][0]();
     ((func_t1 **)(&a))[0][1](&a, 123);

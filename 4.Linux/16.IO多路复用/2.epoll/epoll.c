@@ -49,11 +49,18 @@ int main() {
                     userdata[((UserData *)events[i].data.ptr)->fd].msg, 
                     BUFF_SIZE, 0);
                 if (recv_num <= 0) {
-                    printf("closed by perr!\n");
+                    printf("closed by peer!\n");
                     close(((UserData *)events[i].data.ptr)->fd);
-                    memset(&UserData *)
+                    memset(&userdata [((UserData *)events[i].data.ptr)->fd], 0, sizeof(UserData));
+                    epoll_ctl(epollfd, EPOLL_CTL_DEL, ((UserData *)events[i].data.ptr)->fd, &ev);
+                } else {
+                    UserData *tmp_d = (UserData *)events[i].data.ptr;
+                    printf("<%s> : %s\n", tmp_d->name, temp_d->msg);
+                    ev.events = EPOLLOUT;
+                    ev.data.ptr = &userdata(temp_d->fd);
+                    epoll_ctl(epollfd, EPOLL_CTL_MODm tem_d->fd, &ev);
                 }
-            }
+            } else if ()
         }
     } 
 

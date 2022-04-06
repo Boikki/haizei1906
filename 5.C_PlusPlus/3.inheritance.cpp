@@ -76,11 +76,16 @@ int main() {
     cout << c << endl;
     cout << sizeof(a) << endl;
     Animal *p;
+    Cat &d = a;
     if (rand() % 2) {
         p = &a;
     } else {
         p = &b;
     }
+    d.say();
+    Animal *q[2] = {&a, &b};
+    q[1]->say();
+    q[2]->say();
     a.say();
     p->say();
     return 0;
