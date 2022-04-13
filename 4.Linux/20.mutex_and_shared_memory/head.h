@@ -18,6 +18,8 @@
 
 struct Msg {
     char message[32];
+    pthread_condattr_t c_attr;
+    pthread_cond_t cond;
     pthread_mutexattr_t m_attr;
     pthread_mutex_t mutex;
 };
