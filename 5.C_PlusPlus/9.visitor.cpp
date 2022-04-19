@@ -69,6 +69,17 @@ class OutputIVistor : public A::IVisitor {
     }
 };
 
+class CalcVisitor : public A::IVisitor {
+public :
+    CalcVisitor(int val = 1) : val(val) {}
+    virtual void visit(A *obj) {}
+    virtual void visit(B *obj) { val += 5; }
+    virtual void visit(C *obj) { val *= 2; }
+    virtual void visit(D *obj) { val -= 4; }
+    virtual void visit(E *obj) { val += 6; }
+    int val;
+};
+
 int main() {
     A *arr[10];
     srand(time(0));
@@ -81,9 +92,12 @@ int main() {
         } 
     }
     OutputIVistor vis;
+    CalcVisitor vis2;
 
     for (int i = 0; i < 10; i++) {
         arr[i]->Accept(&vis);
+        arr[i]->Accept(&vis2);
     }
+    cout << vis2.val << endl;
     return 0;
 }
