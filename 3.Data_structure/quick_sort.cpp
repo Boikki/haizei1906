@@ -24,5 +24,10 @@ void quick_sort(int *num, int l, int r) {
 }
 
 int main() {
+    int arr[4] = {3, 5, 2, 1};
+    quick_sort(arr, 0, 4);
+    for (int i = 0; i < 4; i++) {
+        cout << arr[i] << endl;
+    }
     return 0;
 }
